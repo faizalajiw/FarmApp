@@ -12,7 +12,7 @@
                     <h1 class="auth-title">Log in.</h1>
 
                     @if (session('status'))
-                        <div class="mt-3 rounded-md bg-green-500 p-3 shadow-sm">
+                        <div class="alert alert-warning">
                             {{ session('status') }}
                         </div>
                     @endif
@@ -27,7 +27,7 @@
                             </div>
                             @error('email')
                                 <div class="">
-                                    <div class="">
+                                    <div class="alert alert-warning">
                                         <p class="">{{ $message }}</p>
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                             </div>
                             @error('password')
                                 <div class="">
-                                    <div class="">
+                                    <div class=" alert alert-warning">
                                         <p class="">{{ $message }}</p>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                     <div class="fs-4 mt-5 text-center text-lg">
                         <p class="text-gray-600">Don't have an account? <a href="#" class="font-bold">Sign
                                 up</a>.</p>
-                        <p><a class="font-bold" href="#">Forgot password?</a>.</p>
+                        <p><a class="font-bold" href="/forgot-password">Forgot password?</a>.</p>
                     </div>
                 </div>
             </div>
