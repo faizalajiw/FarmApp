@@ -26,6 +26,7 @@ Route::prefix('admin')->group(function () {
 
         //route dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+        Route::get('/home/{id}/{string}', \App\Http\Livewire\Home\Index::class)->name('admin.dashboard.home');
         //route resource users
         // Route::resource('/user', UserController::class, ['as' => 'admin']);
     });
