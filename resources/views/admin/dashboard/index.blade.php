@@ -1,6 +1,13 @@
-@extends('layouts.app', ['tittle'=>'Data Dashboard'])
+@extends('layouts.app', ['title' => 'Dashboard - Admin'])
 
-@section('section')
+@section('content')
+
+ <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
 
 <div class="page-heading">
     <h3>Profile Statistics</h3>
@@ -19,8 +26,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                    <h6 class="text-muted font-semibold">Lembaga</h6>
+                                    <h6 class="font-extrabold mb-0">{{$lembaga}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +43,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
-                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                    <h6 class="text-muted font-semibold">Kelompok</h6>
+                                    <h6 class="font-extrabold mb-0">{{$kelompok}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -53,8 +60,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Following</h6>
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                    <h6 class="text-muted font-semibold">Kandang</h6>
+                                    <h6 class="font-extrabold mb-0">{{$kandang}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -70,8 +77,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
-                                    <h6 class="font-extrabold mb-0">112</h6>
+                                    <h6 class="text-muted font-semibold">Hewan</h6>
+                                    <h6 class="font-extrabold mb-0">{{$hewan}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -209,11 +216,11 @@
                 <div class="card-body py-4 px-4">
                     <div class="d-flex align-items-center">
                         <div class="avatar avatar-xl">
-                            <img src="assets/images/faces/1.jpg" alt="Face 1">
+                            <img src="{{ auth()->user()->avatar }}" alt="Face 1">
                         </div>
                         <div class="ms-3 name">
-                            <h5 class="font-bold">John Duck</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            <h5 class="font-bold">{{auth()->user()->name}}</h5>
+                            <h6 class="text-muted mb-0">{{auth()->user()->email}}</h6>
                         </div>
                     </div>
                 </div>

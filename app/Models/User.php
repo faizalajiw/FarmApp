@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -47,4 +48,30 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * getAvatarAttribute
+     *
+     * @param  mixed $avatar
+     * @return void
+     */
+    public function getAvatarAttribute($avatar)
+    {
+        if ($avatar != null) :
+            return asset('storage/users/' . $avatar);
+        else :
+            return 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $this->name) . '&background=4e73df&color=ffffff&size=100';
+        endif;
+    }
+
+    /**
+     * Method group
+     *
+     * @return void
+     */
+    public function group()
+    {
+        return $this->hasMany(Group::class);
+    }
+
 }
