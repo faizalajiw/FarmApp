@@ -13,12 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
     <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg" type="image/x-icon') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png" type="image/png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     {{-- @vite (['resources/js/js/bootstrap.js','resources/js/js/app.js'])
     @vite(['resources/js/extensions/apexcharts/apexcharts.min.js', 'resources/js/js/pages/dashboard.js'])
@@ -30,6 +30,7 @@
     <link rel="shortcut icon" href="{{ asset('images/logo/favicon.png') }}" type="image/png">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     @livewireStyles
 </head>
 
 <body>
@@ -83,31 +84,17 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item active">
-                            <a href="/admin/dashboard" class='sidebar-link'>
+                            <a href="{{route('livewire.dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'>
+                        <li class="sidebar-item">
+                            <a href="{{route('livewire.lembaga')}}" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
                                 <span>Lembaga</span>
                             </a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a href="component-alert.html">Alert</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="component-badge.html">Badge</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="component-breadcrumb.html">Breadcrumb</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="component-button.html">Button</a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="sidebar-item has-sub">
@@ -173,8 +160,18 @@
                 </div>
             </div>
         </div>
+            <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+             {{ $slot }}
+            </div>
 
-        @yield('content')
+
+        {{-- @yield('content') --}}
+
 
         <script>
             @if (session()->has('success'))
@@ -202,6 +199,7 @@
         <!-- Need: Apexcharts -->
         <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
+         @livewireStyles
 </body>
 
 </html>

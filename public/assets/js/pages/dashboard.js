@@ -1,4 +1,7 @@
-var optionsProfileVisit = {
+
+
+// Chart Jumlah Hewan
+var optionsJumlahHewan = {
 	annotations: {
 		position: 'back'
 	},
@@ -23,10 +26,13 @@ var optionsProfileVisit = {
 		categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul", "Aug","Sep","Oct","Nov","Dec"],
 	},
 }
-let optionsVisitorsProfile  = {
-	series: [70, 30],
-	labels: ['Male', 'Female'],
-	colors: ['#435ebe','#55c6e8'],
+
+
+// Chart Jumlah Lembaga
+let optionsJumlahLembaga  = {
+	series: [30,20,10,40],
+	labels: ['Cazh', 'GSC','Credis','Sulton.Dev'],
+	colors: ['#435ebe','#437aca','#438aba','#485aae','#FAEBD7'],
 	chart: {
 		type: 'donut',
 		width: '100%',
@@ -44,9 +50,14 @@ let optionsVisitorsProfile  = {
 	}
 }
 
-var optionsEurope = {
+
+
+
+
+//Chart Jumlah Kelompok
+var optionsKelompok = {
 	series: [{
-		name: 'series1',
+		name: 'Team Peternak Lokal',
 		data: [310, 800, 600, 430, 540, 340, 605, 805,430, 540, 340, 605]
 	}],
 	chart: {
@@ -92,25 +103,29 @@ var optionsEurope = {
 	},
 };
 
-let optionsAmerica = {
-	...optionsEurope,
+
+//Charts Peternak
+let optionsPeternak = {
+	...optionsKelompok,
 	colors: ['#008b75'],
 }
-let optionsIndonesia = {
-	...optionsEurope,
+
+//Charts Kandang
+let optionsKandang = {
+	...optionsKelompok,
 	colors: ['#dc3545'],
 }
 
 
 
-var chartProfileVisit = new ApexCharts(document.querySelector("#chart-profile-visit"), optionsProfileVisit);
-var chartVisitorsProfile = new ApexCharts(document.getElementById('chart-visitors-profile'), optionsVisitorsProfile)
-var chartEurope = new ApexCharts(document.querySelector("#chart-europe"), optionsEurope);
-var chartAmerica = new ApexCharts(document.querySelector("#chart-america"), optionsAmerica);
-var chartIndonesia = new ApexCharts(document.querySelector("#chart-indonesia"), optionsIndonesia);
+var chartsul = new ApexCharts(document.querySelector("#chart-sul"), optionsJumlahHewan);
+var chartLembaga = new ApexCharts(document.getElementById('chart-lembaga'), optionsJumlahLembaga)
+var chartKelompok = new ApexCharts(document.querySelector("#chart-kelompok"), optionsKelompok);
+var chartPeternak = new ApexCharts(document.querySelector("#chart-peternak"), optionsPeternak);
+var chartKandang = new ApexCharts(document.querySelector("#chart-kandang"), optionsKandang);
 
-chartIndonesia.render();
-chartAmerica.render();
-chartEurope.render();
-chartProfileVisit.render();
-chartVisitorsProfile.render()
+chartKelompok.render();
+chartPeternak.render();
+chartKandang.render();
+chartsul.render();
+chartLembaga.render()
