@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg" type="image/x-icon') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png" type="image/png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
+     {{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     {{-- @vite (['resources/js/js/bootstrap.js','resources/js/js/app.js'])
@@ -31,11 +32,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
      @livewireStyles
+     <style>
+    [x-cloak] { display: none !important; }
+    </style>
 </head>
 
 <body>
-
-    <div id="app">
+     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header position-relative">
@@ -82,81 +85,59 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
-
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item {{ Request::is('admin/dashboard*')? 'active':'' }}">
                             <a href="{{route('livewire.dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
+                        <li class="sidebar-item {{ Request::is('admin/lembaga*')? 'active':'' }}">
+                            {{-- @else --}}
                             <a href="{{route('livewire.lembaga')}}" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
                                 <span>Lembaga</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'>
+                        {{-- @endif --}}
+                        <li class="sidebar-item {{ Request::is('admin/kelompok*')?'active':'' }}">
+                            <a href="{{route('livewire.kelompok')}}" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
                                 <span>Kelompok</span>
                             </a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a href="extra-component-avatar.html">Avatar</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                            </ul>
-                        </li>
 
-                        <li class="sidebar-item has-sub">
+
+                        <li class="sidebar-item">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Peternak</span>
                             </a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a href="layout-default.html">Default Layout</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="layout-vertical-1-column.html">1 Column</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-hexagon-fill"></i>
-                                <span>Kandang</span>
-                            </a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a href="form-element-input.html">Input</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="form-element-input-group.html">Input Group</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-journal-check"></i>
-                                <span>Peristiwa</span>
-                            </a>
-                            <ul class="submenu">
-                                <li class="submenu-item">
-                                    <a href="form-validation-parsley.html">Parsley</a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="sidebar-item">
                             <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>Kandang</span>
+                            </a>
+
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-journal-check"></i>
+                                <span>Peristiwa</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class='sidebar-link'>
                                 <i class="bi bi-pen-fill"></i>
                                 <span>Logout</span>
                             </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                 </div>
             </div>
         </div>
@@ -168,10 +149,6 @@
             </header>
              {{ $slot }}
             </div>
-
-
-        {{-- @yield('content') --}}
-
 
         <script>
             @if (session()->has('success'))
@@ -200,6 +177,7 @@
         <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
          @livewireStyles
+
 </body>
 
 </html>

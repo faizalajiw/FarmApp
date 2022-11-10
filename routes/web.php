@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
         // Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
         Route::get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('livewire.dashboard');
         Route::get('/lembaga', \App\Http\Livewire\Lembaga::class)->name('livewire.lembaga');
+        Route::get('/kelompok', \App\Http\Livewire\Kelompok::class)->name('livewire.kelompok');
         //route resource users
         // Route::resource('/user', UserController::class, ['as' => 'admin']);
     });
