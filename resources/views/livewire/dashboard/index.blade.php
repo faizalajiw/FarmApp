@@ -2,8 +2,6 @@
     <div class="page-heading">
         <h3>Statistik</h3>
     </div>
-
-
     <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-9">

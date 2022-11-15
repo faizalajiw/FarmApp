@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('breeders', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('groups_id');
+            $table->unsignedInteger('cage_id');
             $table->string('identity_number');
             $table->string('name');
             $table->text('address');

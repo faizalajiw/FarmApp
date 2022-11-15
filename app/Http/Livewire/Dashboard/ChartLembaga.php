@@ -10,7 +10,7 @@ class ChartLembaga extends Component
 {
     public $series;
     public $labels;
-    public $number = 1;
+
     public function mount()
     {
         $this->loadData();
@@ -30,10 +30,5 @@ class ChartLembaga extends Component
         $this->series = $data->pluck('total');
         $this->labels = $data->pluck('leader');
 
-        if($this->number != 1){
-            dd('test');
-        }
-
-        $this->number++;
     }
 }

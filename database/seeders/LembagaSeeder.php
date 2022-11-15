@@ -60,30 +60,7 @@ class LembagaSeeder extends Seeder
         ]);
 
         Breeder::create([
-            'groups_id' => 1,
-            'identity_number' => 123,
-            'name' => 'Lorem',
-            'phone' => 8123123,
-            'address' => 'Lorem Ipsum',
-        ]);
-
-        Breeder::create([
-            'groups_id' => 1,
-            'identity_number' => 123,
-            'name' => 'Lorem',
-            'phone' => 8123123,
-            'address' => 'Lorem Ipsum',
-        ]);
-
-        Breeder::create([
-            'groups_id' => 1,
-            'identity_number' => 123,
-            'name' => 'Lorem',
-            'phone' => 8123123,
-            'address' => 'Lorem Ipsum',
-        ]);
-
-        Breeder::create([
+            'cage_id' => 1,
             'groups_id' => 1,
             'identity_number' => 123,
             'name' => 'Lorem',

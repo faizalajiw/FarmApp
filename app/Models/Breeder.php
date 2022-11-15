@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Breeder extends Model
@@ -29,7 +30,7 @@ class Breeder extends Model
      *
      * @return void
      */
-    public function group()
+    public function group():BelongsTo
     {
         return $this->belongsTo(Breeder::class);
     }
@@ -39,8 +40,8 @@ class Breeder extends Model
      *
      * @return void
      */
-    public function cage()
+    public function cage():BelongsTo
     {
-        return $this->hasMany(Cage::class);
+        return $this->belongsTo(Cage::class);
     }
 }
