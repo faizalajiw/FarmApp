@@ -36,4 +36,21 @@ class Index extends Component
             'data' => $count,
         ];
     }
+
+    public function submit()
+    {
+        $this->validate();
+
+        //kumpulin data
+        $data = [
+            'data' => $this->data,
+        ];
+
+        //logic
+        $model = Model::create($data);
+
+
+        session()->flash('success', 'Berhasil input data');
+        return redirect()->route('kemna');
+    }
 }
