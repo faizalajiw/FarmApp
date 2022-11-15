@@ -18,9 +18,9 @@ class KandangTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make("No", "id")
                 ->sortable(),
-            Column::make("Breeders id", "breeders_id")
+            Column::make("Peternakan", "breeders_id")
                 ->sortable(),
             Column::make("Location", "location")
                 ->sortable(),

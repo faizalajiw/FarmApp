@@ -18,9 +18,9 @@ class KelompokTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make("No", "id")
                 ->sortable(),
-            Column::make("Institutions id", "institutions_id")
+            Column::make("Institutions", "institutions_id")
                 ->sortable(),
             Column::make("Image", "image")
                 ->sortable(),
@@ -38,6 +38,15 @@ class KelompokTable extends DataTableComponent
                 ->sortable(),
             Column::make("Updated at", "updated_at")
                 ->sortable(),
+
+            Column::make("Actions")
+                ->label(
+                    function ($row, Column $column) {
+                        $delete = '<button class="btn btn-primary" wire:click="delete(' . $row->id . ')">Hapus</button>';
+                        $edit = '<button class="btn btn-success" wire:click="edit(' . $row->id . ')">Edit</button>';
+                        return $edit . $delete;
+                    }
+                )->html(),
         ];
     }
 }

@@ -8,6 +8,6 @@ class Peternak extends Component
 {
     public function render()
     {
-        return view('livewire.peternak');
+        return view('livewire.peternak')->layout('layouts.app', ['title' => 'Admin - Peternak']);
     }
 }

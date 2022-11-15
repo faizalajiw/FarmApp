@@ -108,23 +108,23 @@
                             </a>
 
 
-                        <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                        <li class="sidebar-item {{ Request::is('admin/peternak*')? 'active':'' }}">
+                            <a href="{{route('livewire.peternak')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Peternak</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                        <li class="sidebar-item {{ Request::is('admin/kandang')? 'active':'' }}">
+                            <a href="{{route('livewire.kandang')}}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
                                 <span>Kandang</span>
                             </a>
 
                         </li>
 
-                        <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                        <li class="sidebar-item {{ Request::is('admin/peristiwa*')? 'active':'' }}">
+                            <a href="{{route('livewire.peristiwa')}}" class='sidebar-link'>
                                 <i class="bi bi-journal-check"></i>
                                 <span>Peristiwa</span>
                             </a>

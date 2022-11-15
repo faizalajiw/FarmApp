@@ -8,6 +8,6 @@ class Peristiwa extends Component
 {
     public function render()
     {
-        return view('livewire.peristiwa');
+        return view('livewire.peristiwa')->layout('layouts.app', ['title' => 'Admin Peristiwa']);
     }
 }

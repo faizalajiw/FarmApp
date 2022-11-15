@@ -8,6 +8,6 @@ class Kandang extends Component
 {
     public function render()
     {
-        return view('livewire.kandang');
+        return view('livewire.kandang')->layout('layouts.app', ['title' => 'Admin - Kandang']);
     }
 }

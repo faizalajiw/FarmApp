@@ -30,6 +30,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('livewire.dashboard');
         Route::get('/lembaga', \App\Http\Livewire\Lembaga::class)->name('livewire.lembaga');
         Route::get('/kelompok', \App\Http\Livewire\Kelompok::class)->name('livewire.kelompok');
+        Route::get('/peternak', \App\Http\Livewire\Peternak::class)->name('livewire.peternak');
+        Route::get('/kandang', \App\Http\Livewire\Kandang::class)->name('livewire.kandang');
+        Route::get('/peristiwa', \App\Http\Livewire\Peristiwa::class)->name('livewire.peristiwa');
         //route resource users
         // Route::resource('/user', UserController::class, ['as' => 'admin']);
     });

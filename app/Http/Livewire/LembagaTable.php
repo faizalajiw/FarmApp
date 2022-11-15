@@ -44,8 +44,8 @@ class LembagaTable extends DataTableComponent
             Column::make('Actions')
                 ->label(
                     function ($row, Column $column) {
-                        $delete = '<button class="btn btn-primary" wire:click="delete(' . $row->id . ')">Hapus</button>';
-                        $edit = '<button class="btn btn-primary" wire:click="edit(' . $row->id . ')">Edit</button>';
+                    $delete = '<button class="btn btn-primary" wire:click="delete(' . $row->id . ')">Hapus</button>';
+                    $edit = '<button class="btn btn-success" wire:click="edit(' . $row->id . ')">Edit</button>';
                         return $edit . $delete;
                     }
                 )->html(),
