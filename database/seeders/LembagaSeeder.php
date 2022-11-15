@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Breeder;
+use App\Models\Cage;
+use App\Models\Group;
 use App\Models\Institution;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -18,93 +21,107 @@ class LembagaSeeder extends Seeder
     {
         //
 
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh1',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD010',
+        Cage::create([
+            'breeders_id' => 1,
+            'location' => 'Lorem Ipsum',
+            'category' => 'Lorem',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh2',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD012',
+
+        Cage::create([
+            'breeders_id' => 1,
+            'location' => 'Lorem Ipsum',
+            'category' => 'Lorem',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh3',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD013',
+
+        Cage::create([
+            'breeders_id' => 1,
+            'location' => 'Lorem Ipsum',
+            'category' => 'Lorem',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh4',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD014',
+
+        Group::create([
+            'institutions_id' => 1,
+            'image' => 'Lorem Ipsum',
+            'name' => 'Lorem Ipsum',
+            'address' => 'Lorem Ipsum',
+            'phone' => 'Lorem Ipsum',
+            'legal_permit' => 'Lorem Ipsum',
+            'leader' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh5',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD015',
+
+        Group::create([
+            'institutions_id' => 1,
+            'image' => 'Lorem Ipsum',
+            'name' => 'Lorem Ipsum',
+            'address' => 'Lorem Ipsum',
+            'phone' => 'Lorem Ipsum',
+            'legal_permit' => 'Lorem Ipsum',
+            'leader' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh6',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD016',
+
+        Breeder::create([
+            'groups_id' => 1,
+            'identity_number' => 123,
+            'name' => 'Lorem',
+            'phone' => 8123123,
+            'address' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh7',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD017',
+
+        Breeder::create([
+            'groups_id' => 1,
+            'identity_number' => 123,
+            'name' => 'Lorem',
+            'phone' => 8123123,
+            'address' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh8',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD0118',
+
+        Breeder::create([
+            'groups_id' => 1,
+            'identity_number' => 123,
+            'name' => 'Lorem',
+            'phone' => 8123123,
+            'address' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh9',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD0119',
+
+        Breeder::create([
+            'groups_id' => 1,
+            'identity_number' => 123,
+            'name' => 'Lorem',
+            'phone' => 8123123,
+            'address' => 'Lorem Ipsum',
         ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh9',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD021',
-        ]);
-        Institution::create([
-            'image' => '',
-            'name' => 'Cazh10',
-            'leader' => 'Supri',
-            'address' => 'Purwokerto',
-            'phone' => '089576377887',
-            'legal_permit' => 'AHU_ABCD022',
-        ]);
+
+        foreach(range(0,rand(1,15)) as $i){
+            Institution::create([
+                'image' => '',
+                'name' => 'Cazh1',
+                'leader' => 'CBS',
+                'address' => 'Purwokerto',
+                'phone' => '089576377887',
+                'legal_permit' => 'AHU_ABCD010',
+            ]);
+        }
+
+        foreach(range(0,rand(1,15)) as $i){
+            Institution::create([
+                'image' => '',
+                'name' => 'Cazh1',
+                'leader' => 'Cazh',
+                'address' => 'Purwokerto',
+                'phone' => '089576377887',
+                'legal_permit' => 'AHU_ABCD010',
+            ]);
+        }
+
+        foreach(range(0,rand(1,15)) as $i){
+            Institution::create([
+                'image' => '',
+                'name' => 'Cazh1',
+                'leader' => 'Cards',
+                'address' => 'Purwokerto',
+                'phone' => '089576377887',
+                'legal_permit' => 'AHU_ABCD010',
+            ]);
+        }
     }
 }

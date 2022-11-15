@@ -119,7 +119,7 @@ let optionsKandang = {
 
 
 var chartsul = new ApexCharts(document.querySelector("#chart-sul"), optionsJumlahHewan);
-var chartLembaga = new ApexCharts(document.getElementById('chart-lembaga'), optionsJumlahLembaga)
+var chartLembaga = new ApexCharts(document.getElementById('chart-lembaga'), optionsJumlahLembaga);
 var chartKelompok = new ApexCharts(document.querySelector("#chart-kelompok"), optionsKelompok);
 var chartPeternak = new ApexCharts(document.querySelector("#chart-peternak"), optionsPeternak);
 var chartKandang = new ApexCharts(document.querySelector("#chart-kandang"), optionsKandang);

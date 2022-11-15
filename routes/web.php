@@ -27,7 +27,8 @@ Route::prefix('admin')->group(function () {
 
         //route dashboard
         // Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
-        Route::get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('livewire.dashboard');
+        Route::get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');
+        Route::get('/new/dashboard', \App\Http\Livewire\Dashboard\Index::class)->name('livewire.dashboard');
         Route::get('/lembaga', \App\Http\Livewire\Lembaga::class)->name('livewire.lembaga');
         Route::get('/kelompok', \App\Http\Livewire\Kelompok::class)->name('livewire.kelompok');
         Route::get('/peternak', \App\Http\Livewire\Peternak::class)->name('livewire.peternak');
